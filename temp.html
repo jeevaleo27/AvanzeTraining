@@ -1,0 +1,200 @@
+x
+<html>
+<head>
+<style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+*{
+  box-sizeing: boder-box;
+ }
+ body
+ { font-family:ariel;
+
+ }
+ 
+ 
+ header {
+  background-color: #D2691E;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  }
+  
+  nav {
+  float: left;
+  width: 10%;
+  height: 600px;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+  
+ form {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #8fbc8f;
+  height: 600px; 
+  text-align: center;
+ 
+}
+
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 40%;
+ } 
+  footer {
+  background-color: 
+#E6E6FA;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+</style>
+<script>
+ function validateForm() {
+							/* radio bhutton
+								var radios = document.getElementsByName("gender");
+							var formValid = false;
+									
+							var i = 0;
+							while (!formValid && i < radios.length) 
+							{
+								if (radios[i].checked) formValid = true;
+								i++;        
+								if (!formValid) alert("Must check some option!");
+								return formValid;
+							}*/
+
+
+
+							  
+									 var dat = document.forms["myForm"]["date"].value;
+							  if (dat == "") 
+							  {
+								 var msg = '<span style="color:red;">You must select your gender!</span><br /><br />';
+                    document.getElementById('alert_date').innerHTML = msg;
+                    return false;
+							  }
+
+
+
+
+							 
+							   
+
+
+
+
+
+}
+
+
+</script>
+
+</head>
+<body>
+	<header>
+		<h2>login form</h2>
+	</header>
+	
+	
+		<section  >
+			<nav>
+				<ul>
+				<li><a href="#">Gamil</a></li>
+				<li><a href="#">facebook</a></li>
+				<li><a href="#">whats app</a></li>
+			   </ul>
+			</nav>
+
+
+			<form name="myForm" action="#" onsubmit="return validateForm()" method="post" >
+			 <table align="center" >
+			 <tr><th>Bio-Data</th></tr>
+			 <tr><td>* Required fieldset</td><tr><br>
+			     <tr>
+				<th><label for="fname">First name:*</label></th>     <td> <input type="text" id="fname" name="fname" ></td><br>
+				</tr>
+				
+				<tr>
+				<th><label for="lname">Last name:*</label></th>     <td> <input type="text" id="lname" name="lname" ></td><br>
+				</tr>
+				
+				<tr>		
+				<th><label for="email">E-Mail:*</label></th>			<td> <input type="text" id="email" name="email"></td><br>
+				</tr>
+				
+				<tr>
+				<th><label for="password">password:*</label></th>		<td><input type="password" id="password" name="password"></td><br>
+				</tr>
+				
+				<tr>
+				<th><label for="phone">Phone No:*</label></th>		<td><input type="text" id="phone" name="phone"></td><br>
+				</tr>
+				
+				<tr>
+				<th><label for="date">DOB:</label></th>				<td><input type="date" id="date" name="date" >
+				<div id="alert_date"></div></td>
+				<br>
+				</tr>
+				
+				<tr>
+				<th><label for="gender">Male:</label></th>			<td><input type="radio" id="1" name="gender"  value="1" ></td><br>
+				</tr>
+				
+				<tr>
+				<th><label for="gender">Female:</label></th>			<td><input type="radio" id="1" name="gender" value="1" ></td><br>
+				</tr>
+				
+				
+				<tr>
+				<th><label for="save"> Remember me</label></th>  <td><input type="checkbox" id="save" name="save" value="1" ></td><br>
+				</tr>
+				
+				<tr>
+				<th><label for="message-box"> message-box</label></th>  <td><textarea id="area" name="area" ></textarea> </td><br>
+				</tr>
+				
+				
+				<tr><th>select course*</th> <td><select name = "dropdown" id="dropdown" >
+				
+			<option value = "0"  selected  >------</option>	
+            <option value = "1"   >Computer Architecture</option>
+            <option value = "2">Java</option>
+            <option value = "3">Discrete Mathematics</option>
+         </select></td></tr><br>
+							
+							<tr>
+							<th></th>
+							<td>
+						<input type="submit" value="submit"  ></td></tr><br>
+						
+				</table>
+			</form>
+
+		</section>
+		<footer>
+				Thank you
+		</footer>
+
+</body>
+</html>

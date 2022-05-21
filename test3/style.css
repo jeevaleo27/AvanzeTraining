@@ -1,0 +1,33 @@
+html,body
+{
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+*
+{
+	box-sizing: border-box;
+}
+#forms
+{
+	float: left;
+}
+#forms,#table_forms
+{
+	display: inline-block;
+	width: 50vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+input,label,.custome-select
+{
+	display: block;
+	width: 100%;
+}
+select
+{
+	width: 100%;
+}
+

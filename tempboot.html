@@ -1,0 +1,297 @@
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+	
+
+*{
+  box-sizeing: boder-box;
+ }
+ body
+ { font-family:ariel;
+
+ }
+ 
+ 
+ #header{
+  background-color: #D2691E;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  }
+  
+  nav {
+  float: left;
+  width: 10%;
+  height: 600px;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+  
+ #form {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #8fbc8f;
+  height: 600px; 
+  text-align: ;
+ 
+}
+
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 40%;
+ } 
+  #footer {
+  background-color: 
+#E6E6FA;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+</style>
+
+
+
+
+
+
+</head>
+<body>
+	<div  id="header" >
+  <p>Login form</p>      
+        
+</div>
+	
+	
+		<section  >
+			<nav class="navbar bg-light">
+				<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="#">Gamil</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">facebook</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">whats app</a></li>
+			   </ul>
+			</nav>
+
+<div id="form" class="container">
+			<form name="myForm" action="#" onsubmit="return validateForm()" method="post" >
+			 <div>
+			Bio-Data</div>
+			<div>
+			 * Required fieldset
+			</div>
+
+
+			     <div class="form-group form-group-sm">
+						<label  class="col-sm-2 control-label" for="fname">First name:*</label> 
+					
+						<input  class="form-control"stype="text"   id="fname" name="fname" >
+					
+				</div>
+
+
+					 <!--<div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <span class="help-block">This is some help text that breaks onto a new line and may extend more than one line.</span>
+    </div>-->
+
+				<div class="form-group">
+					<label for="lname">Last name:*</label> <input class="form-control" type="text" id="lname" name="lname" >
+				</div>
+
+				<div class="form-group">
+					<label for="email">E-Mail:*</label> <input class="form-control" type="email" id="email" name="email">
+				</div>
+
+				<div class="form-group">
+					<label for="password">password:*</label><input class="form-control" type="password" id="password" name="password">
+				</div>
+
+				<div class="form-group">
+					<label for="phone">Phone No:*</label><input class="form-control" type="text" id="phone" name="phone">
+				</div>
+
+				<div class="form-group">
+					<label for="date">DOB:</label><input class="form-control" type="date" id="date" name="date" >
+				</div>
+
+				<div class="form-group">
+					<label for="gender"> Gender :Male:</label><input type="radio" class="form-control"id="male" name="gender"  value="male" >
+				
+					<label for="gender">Female:</label><input type="radio"  class="form-control"id="female" name="gender" value="female" >
+				</div>
+
+				<div class="form-group">
+					<label for="save"> Remember me</label><input type="checkbox" class="form-control" id="save" name="save" value="1" >
+				</div>
+
+				<div class="form-group">
+					<label for="message-box"> message-box</label><textarea id="area" class="form-control" name="area" ></textarea> 
+				</div>
+
+				<div class="form-group">
+					select course*<select name = "dropdown" class="form-control" id="dropdown" >
+				
+			<option value = "0"  selected  >------</option>	
+            <option value = "1"   >Computer Architecture</option>
+            <option value = "2">Java</option>
+            <option value = "3">Discrete Mathematics</option>
+         </select>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="submit" onclick="return send()" > 
+				</div>
+
+				
+			</form></div>
+</div>
+
+
+		</section>
+		<div id="footer">Thank you</div>
+				
+		
+
+</body>
+<script>
+ function validateForm() { 
+
+
+
+ 	
+
+ 							/* first name*/
+                              var fname= document.forms["myForm"]["fname"].value;
+							  if (fname == "") 
+							  {
+								alert("FName must be filled out");
+								return false;
+							  }
+
+							  /* last name*/
+  
+							   var lname= document.forms["myForm"]["lname"].value;
+							   if (lname == "") 
+							  {
+								alert("LName must be filled out");
+								return false;
+							  }
+							    /*check box*/
+
+							if(!document.getElementById('save').checked){
+								alert('Checkbox not checked');
+								return false;}
+
+
+
+
+								/* dropdown*/
+							var empty = document.getElementById("dropdown").value;
+
+					        if (empty == "0") {
+					            alert('Please select an item');
+					            return false;
+					        }
+					       
+
+					        /* password*/
+							  var password = document.forms["myForm"]["password"].value;
+							  if (password == "") 
+							  {
+								alert("password must be filled out");
+								return false;
+							  }
+							 
+
+
+
+							/* radio bhutton*/
+								var radio = document.forms["myForm"]["gender"].value;
+							  if (radio == "") 
+							  {
+								alert("fill the radio button ");
+								return false;
+							  }
+
+
+
+							  /* email*/
+							  var email = document.getElementById("email").value;
+							  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            //var address = document.getElementById[email].value;
+            if (reg.test(email) == false) 
+            {
+                alert('Invalid Email Address');
+                return (false);
+            }
+
+
+
+            /* date*/
+
+
+             var dat = document.forms["myForm"]["date"].value;
+							  if (dat == "") 
+							  {
+								alert("fill date ");
+								return false;
+							  }
+							  
+								 
+
+
+            	/* phone number*/
+							   var phone = document.getElementById("phone").value;
+								var pattern = /^[7-9][0-9]{9}$/;
+								if (pattern.test(phone)) 
+								{
+									alert("Your mobile number : "+mobile);
+									return true;
+								}
+								alert("It is not valid mobile number");
+								return false;
+
+
+								/* date*/
+								 var date = document.getElementById("date").value;
+							 var dateformat = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
+					            
+					            if (dateformat.test(date) == false) 
+					           {
+					                alert('Invalid date');
+					                return (false);
+					            }
+
+						}
+
+
+
+							</script>
+</html>
